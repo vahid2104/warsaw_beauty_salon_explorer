@@ -1,189 +1,171 @@
-import { useState, useMemo } from "react";
-import { Search, Star, MapPin } from "lucide-react";
-import {
-  salonData,
-  districts,
-  categories,
-  sortOptions,
-  Salon,
-} from "../../../data/salons";
-import { mainListingStyles as s } from "./mainListing.styles";
+import { useEffect, useMemo, useState } from "react";
+import { MapPin, Search, Star, Scissors } from "lucide-react";
+import type { SalonListItem } from "../../../types/salon";
+import { getSalons } from "../../../services/salonsApi";
+import { mainListingStyles as styles } from "./mainListing.styles";
 
 type MainListingProps = {
-  onSelectSalon: (salonId: string) => void;
+  onViewDetails: (id: number) => void;
 };
 
-export default function MainListing({ onSelectSalon }: MainListingProps) {
-  const [searchQuery, setSearchQuery] = useState("");
+const DISTRICTS = [
+  "All Districts",
+  "Bemowo",
+  "Bielany",
+  "Wola",
+  "Śródmieście",
+  "Mokotów",
+  "Żoliborz",
+  "Ochota",
+  "Praga",
+  "Wilanów",
+  "Targówek",
+];
+
+const CATEGORIES = [
+  "All Categories",
+  "Beauty Salon",
+  "Hair Salon",
+  "Nail Salon",
+  "Skin Care Clinic",
+  "Barber",
+  "Spa",
+];
+
+const SORT_OPTIONS = ["Highest Rating", "Most Reviews", "Name A-Z"];
+
+export default function MainListing({ onViewDetails }: MainListingProps) {
+  const [salons, setSalons] = useState<SalonListItem[]>([]);
+  const [searchTerm, setSearchTerm] = useState("");
   const [selectedDistrict, setSelectedDistrict] = useState("All Districts");
   const [selectedCategory, setSelectedCategory] = useState("All Categories");
-  const [sortBy, setSortBy] = useState("rating");
-  const [isLoading] = useState(false);
+  const [sortBy, setSortBy] = useState("Highest Rating");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  const filteredAndSortedSalons = useMemo(() => {
-    let filtered = [...salonData];
+  useEffect(() => {
+    async function loadSalons() {
+      try {
+        setLoading(true);
+        setError(null);
 
-    if (searchQuery) {
-      filtered = filtered.filter(
-        (salon) =>
-          salon.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          salon.address.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          salon.services.some((service) =>
-            service.toLowerCase().includes(searchQuery.toLowerCase())
-          )
-      );
+        const data = await getSalons({
+          search: searchTerm,
+          district: selectedDistrict,
+          category: selectedCategory,
+        });
+
+        setSalons(data);
+      } catch (err) {
+        console.error(err);
+        setError("Failed to load salons. Please check if backend is running.");
+      } finally {
+        setLoading(false);
+      }
     }
 
-    if (selectedDistrict !== "All Districts") {
-      filtered = filtered.filter((salon) => salon.district === selectedDistrict);
+    const timeoutId = setTimeout(loadSalons, 250);
+
+    return () => clearTimeout(timeoutId);
+  }, [searchTerm, selectedDistrict, selectedCategory]);
+
+  const sortedSalons = useMemo(() => {
+    const copy = [...salons];
+
+    if (sortBy === "Highest Rating") {
+      return copy.sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0));
     }
 
-    if (selectedCategory !== "All Categories") {
-      filtered = filtered.filter((salon) => salon.category === selectedCategory);
+    if (sortBy === "Most Reviews") {
+      return copy.sort((a, b) => (b.reviewsCount ?? 0) - (a.reviewsCount ?? 0));
     }
 
-    filtered.sort((a, b) => {
-      if (sortBy === "rating") return b.rating - a.rating;
-      if (sortBy === "reviews") return b.reviewsCount - a.reviewsCount;
-      if (sortBy === "name") return a.name.localeCompare(b.name);
-      return 0;
-    });
+    if (sortBy === "Name A-Z") {
+      return copy.sort((a, b) => a.name.localeCompare(b.name));
+    }
 
-    return filtered;
-  }, [searchQuery, selectedDistrict, selectedCategory, sortBy]);
+    return copy;
+  }, [salons, sortBy]);
 
-  const EmptyState = () => (
-    <div className={s.emptyState}>
-      <div className={s.emptyIconBox}>
-        <Search className={s.emptyIcon} />
-      </div>
-      <h3 className={s.emptyTitle}>No salons found</h3>
-      <p className={s.emptyText}>
-        Try adjusting your filters or search terms to find what you're looking for.
-      </p>
-    </div>
-  );
+  const ratedSalons = salons.filter((salon) => salon.rating !== null);
 
-  const LoadingState = () => (
-    <div className={s.grid}>
-      {[1, 2, 3, 4, 5, 6].map((i) => (
-        <div key={i} className={s.loadingCard}>
-          <div className={s.loadingTitle}></div>
-          <div className={s.loadingSubtitle}></div>
-          <div className={s.loadingLines}>
-            <div className={s.loadingLineFull}></div>
-            <div className={s.loadingLineShort}></div>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
+  const averageRating =
+    ratedSalons.length > 0
+      ? (
+          ratedSalons.reduce((sum, salon) => sum + (salon.rating ?? 0), 0) /
+          ratedSalons.length
+        ).toFixed(1)
+      : "0";
 
-  const SalonCard = ({ salon }: { salon: Salon }) => (
-    <div className={s.salonCard}>
-      <div className={s.salonCardContent}>
-        <div className={s.salonHeader}>
-          <div className={s.salonHeaderContent}>
-            <h3 className={s.salonName}>{salon.name}</h3>
-
-            <div className={s.salonMeta}>
-              <span className={s.categoryBadge}>{salon.category}</span>
-              <span className={s.dot}>•</span>
-              <span>{salon.priceRange}</span>
-            </div>
-          </div>
-        </div>
-
-        <div className={s.ratingRow}>
-          <Star className={s.starIcon} />
-          <span className={s.ratingText}>{salon.rating.toFixed(1)}</span>
-          <span className={s.reviewsText}>
-            ({salon.reviewsCount} reviews)
-          </span>
-        </div>
-
-        <div className={s.addressBox}>
-          <div className={s.addressRow}>
-            <MapPin className={s.mapIcon} />
-            <div>
-              <div>{salon.district}</div>
-              <div className={s.addressText}>{salon.address}</div>
-            </div>
-          </div>
-        </div>
-
-        <div className={s.servicesBox}>
-          {salon.services.slice(0, 3).map((service, idx) => (
-            <span key={idx} className={s.serviceBadge}>
-              {service}
-            </span>
-          ))}
-
-          {salon.services.length > 3 && (
-            <span className={s.moreServices}>
-              +{salon.services.length - 3} more
-            </span>
-          )}
-        </div>
-
-        <button
-          onClick={() => onSelectSalon(salon.id)}
-          className={s.detailsButton}
-        >
-          View Details
-        </button>
-      </div>
-    </div>
-  );
+  const districtsCovered = new Set(salons.map((salon) => salon.district)).size;
 
   return (
-    <div className={s.page}>
-      {/* Navigation */}
-      <nav className={s.nav}>
-        <div className={s.navContainer}>
-          <div className={s.navInner}>
-            <h1 className={s.navTitle}>Warsaw Beauty Salon Explorer</h1>
+    <main className={styles.page}>
+      <nav className={styles.nav}>
+        <div className={styles.navContainer}>
+          <div className={styles.navInner}>
+            <h1 className={styles.navTitle}>Warsaw Beauty Salon Explorer</h1>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <div className={s.hero}>
-        <div className={s.heroContainer}>
-          <div className={s.heroContent}>
-            <h1 className={s.heroTitle}>Find beauty salons in Warsaw</h1>
-            <p className={s.heroText}>
+      <section className={styles.hero}>
+        <div className={styles.heroContainer}>
+          <div className={styles.heroContent}>
+            <h2 className={styles.heroTitle}>Find beauty salons in Warsaw</h2>
+            <p className={styles.heroText}>
               Browse real salon data by district, service type, and rating
             </p>
 
-            <div className={s.searchWrapper}>
-              <Search className={s.searchIcon} />
+            <div className={styles.searchWrapper}>
+              <Search className={styles.searchIcon} />
               <input
+                className={styles.searchInput}
                 type="text"
                 placeholder="Search by name, address, or service..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className={s.searchInput}
+                value={searchTerm}
+                onChange={(event) => setSearchTerm(event.target.value)}
               />
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Main Content */}
-      <div className={s.mainContainer}>
-        {/* Filters and Sort */}
-        <div className={s.filtersBox}>
-          <div className={s.filtersRow}>
-            <div className={s.filtersGroup}>
-              <div className={s.filterItem}>
-                <label className={s.label}>District</label>
+      <section className={styles.mainContainer}>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          <div className="bg-white rounded-xl border border-gray-200 p-5">
+            <p className="text-2xl font-semibold text-gray-900">
+              {salons.length}
+            </p>
+            <p className="text-sm text-gray-500">Total salons</p>
+          </div>
+
+          <div className="bg-white rounded-xl border border-gray-200 p-5">
+            <p className="text-2xl font-semibold text-gray-900">
+              {averageRating}
+            </p>
+            <p className="text-sm text-gray-500">Average rating</p>
+          </div>
+
+          <div className="bg-white rounded-xl border border-gray-200 p-5">
+            <p className="text-2xl font-semibold text-gray-900">
+              {districtsCovered}
+            </p>
+            <p className="text-sm text-gray-500">Districts covered</p>
+          </div>
+        </div>
+
+        <div className={styles.filtersBox}>
+          <div className={styles.filtersRow}>
+            <div className={styles.filtersGroup}>
+              <div className={styles.filterItem}>
+                <label className={styles.label}>District</label>
                 <select
+                  className={styles.select}
                   value={selectedDistrict}
-                  onChange={(e) => setSelectedDistrict(e.target.value)}
-                  className={s.select}
+                  onChange={(event) => setSelectedDistrict(event.target.value)}
                 >
-                  {districts.map((district) => (
+                  {DISTRICTS.map((district) => (
                     <option key={district} value={district}>
                       {district}
                     </option>
@@ -191,14 +173,14 @@ export default function MainListing({ onSelectSalon }: MainListingProps) {
                 </select>
               </div>
 
-              <div className={s.filterItem}>
-                <label className={s.label}>Category</label>
+              <div className={styles.filterItem}>
+                <label className={styles.label}>Category</label>
                 <select
+                  className={styles.select}
                   value={selectedCategory}
-                  onChange={(e) => setSelectedCategory(e.target.value)}
-                  className={s.select}
+                  onChange={(event) => setSelectedCategory(event.target.value)}
                 >
-                  {categories.map((category) => (
+                  {CATEGORIES.map((category) => (
                     <option key={category} value={category}>
                       {category}
                     </option>
@@ -207,16 +189,16 @@ export default function MainListing({ onSelectSalon }: MainListingProps) {
               </div>
             </div>
 
-            <div className={s.sortItem}>
-              <label className={s.label}>Sort by</label>
+            <div className={styles.sortItem}>
+              <label className={styles.label}>Sort by</label>
               <select
+                className={styles.select}
                 value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-                className={s.select}
+                onChange={(event) => setSortBy(event.target.value)}
               >
-                {sortOptions.map((option) => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
+                {SORT_OPTIONS.map((option) => (
+                  <option key={option} value={option}>
+                    {option}
                   </option>
                 ))}
               </select>
@@ -224,30 +206,106 @@ export default function MainListing({ onSelectSalon }: MainListingProps) {
           </div>
         </div>
 
-        {/* Results Count */}
-        <div className={s.resultsCount}>
-          <p className={s.resultsText}>
-            Found{" "}
-            <span className={s.resultsNumber}>
-              {filteredAndSortedSalons.length}
-            </span>{" "}
-            {filteredAndSortedSalons.length === 1 ? "salon" : "salons"}
-          </p>
-        </div>
-
-        {/* Salon Cards */}
-        {isLoading ? (
-          <LoadingState />
-        ) : filteredAndSortedSalons.length === 0 ? (
-          <EmptyState />
-        ) : (
-          <div className={s.grid}>
-            {filteredAndSortedSalons.map((salon) => (
-              <SalonCard key={salon.id} salon={salon} />
+        {loading && (
+          <div className={styles.grid}>
+            {Array.from({ length: 6 }).map((_, index) => (
+              <div className={styles.loadingCard} key={index}>
+                <div className={styles.loadingTitle} />
+                <div className={styles.loadingSubtitle} />
+                <div className={styles.loadingLines}>
+                  <div className={styles.loadingLineFull} />
+                  <div className={styles.loadingLineShort} />
+                </div>
+              </div>
             ))}
           </div>
         )}
-      </div>
-    </div>
+
+        {error && (
+          <div className="bg-red-50 border border-red-200 text-red-700 rounded-xl p-4 mb-6">
+            {error}
+          </div>
+        )}
+
+        {!loading && !error && (
+          <>
+            <div className={styles.resultsCount}>
+              <p className={styles.resultsText}>
+                Found{" "}
+                <span className={styles.resultsNumber}>
+                  {sortedSalons.length}
+                </span>{" "}
+                salons
+              </p>
+            </div>
+
+            {sortedSalons.length === 0 ? (
+              <div className={styles.emptyState}>
+                <div className={styles.emptyIconBox}>
+                  <Scissors className={styles.emptyIcon} />
+                </div>
+                <h3 className={styles.emptyTitle}>No salons found</h3>
+                <p className={styles.emptyText}>
+                  Try changing your search or filter options.
+                </p>
+              </div>
+            ) : (
+              <div className={styles.grid}>
+                {sortedSalons.map((salon) => (
+                  <article className={styles.salonCard} key={salon.id}>
+                    <div className={styles.salonCardContent}>
+                      <div className={styles.salonHeader}>
+                        <div className={styles.salonHeaderContent}>
+                          <h3 className={styles.salonName}>{salon.name}</h3>
+
+                          <div className={styles.salonMeta}>
+                            <span className={styles.categoryBadge}>
+                              {salon.category}
+                            </span>
+                            <span className={styles.dot}>•</span>
+                            <span>{salon.priceRange ?? "Price not available"}</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className={styles.ratingRow}>
+                        <Star className={styles.starIcon} />
+                        <span className={styles.ratingText}>
+                          {salon.rating ?? "N/A"}
+                        </span>
+                        <span className={styles.reviewsText}>
+                          {salon.reviewsCount !== null
+                            ? `(${salon.reviewsCount} reviews)`
+                            : "(No reviews)"}
+                        </span>
+                      </div>
+
+                      <div className={styles.addressBox}>
+                        <div className={styles.addressRow}>
+                          <MapPin className={styles.mapIcon} />
+                          <div>
+                            <p>{salon.district}</p>
+                            <p className={styles.addressText}>
+                              {salon.address}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <button
+                        className={styles.detailsButton}
+                        onClick={() => onViewDetails(salon.id)}
+                      >
+                        View Details
+                      </button>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            )}
+          </>
+        )}
+      </section>
+    </main>
   );
 }

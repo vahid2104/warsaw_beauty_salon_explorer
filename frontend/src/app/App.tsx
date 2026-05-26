@@ -2,61 +2,55 @@ import { useState } from "react";
 import MainListing from "./components/mainListing/MainListing";
 import SalonDetail from "./components/salonDetail/SalonDetail";
 import SalonEdit from "./components/salonEdit/SalonEdit";
-import { Salon } from "../data/salons";
-import { toast, Toaster } from "sonner";
 
 type View = "listing" | "detail" | "edit";
 
-export default function App() {
+function App() {
   const [currentView, setCurrentView] = useState<View>("listing");
-  const [selectedSalonId, setSelectedSalonId] = useState<string | null>(null);
+  const [selectedSalonId, setSelectedSalonId] = useState<number | null>(null);
 
-  const handleSelectSalon = (salonId: string) => {
-    setSelectedSalonId(salonId);
+  const handleViewDetails = (id: number) => {
+    setSelectedSalonId(id);
     setCurrentView("detail");
   };
 
-  const handleBackToListing = () => {
-    setCurrentView("listing");
-    setSelectedSalonId(null);
+  const handleEditSalon = (id: number) => {
+    setSelectedSalonId(id);
+    setCurrentView("edit");
   };
 
-  const handleEdit = (salonId: string) => {
-    setSelectedSalonId(salonId);
-    setCurrentView("edit");
+  const handleBackToList = () => {
+    setSelectedSalonId(null);
+    setCurrentView("listing");
   };
 
   const handleBackToDetail = () => {
     setCurrentView("detail");
   };
 
-  const handleSave = (updatedSalon: Salon) => {
-    // In a real application, this would save to a backend
-    console.log("Saving salon:", updatedSalon);
-    toast.success("Salon updated successfully!");
-    setCurrentView("detail");
-  };
-
   return (
     <>
-      <Toaster position="top-right" richColors />
-      {currentView === "listing" && <MainListing onSelectSalon={handleSelectSalon} />}
+      {currentView === "listing" && (
+        <MainListing onViewDetails={handleViewDetails} />
+      )}
 
-      {currentView === "detail" && selectedSalonId && (
+      {currentView === "detail" && selectedSalonId !== null && (
         <SalonDetail
           salonId={selectedSalonId}
-          onBack={handleBackToListing}
-          onEdit={handleEdit}
+          onBack={handleBackToList}
+          onEdit={handleEditSalon}
         />
       )}
 
-      {currentView === "edit" && selectedSalonId && (
+      {currentView === "edit" && selectedSalonId !== null && (
         <SalonEdit
           salonId={selectedSalonId}
-          onBack={handleBackToDetail}
-          onSave={handleSave}
+          onCancel={handleBackToDetail}
+          onSaved={handleBackToDetail}
         />
       )}
     </>
   );
 }
+
+export default App;

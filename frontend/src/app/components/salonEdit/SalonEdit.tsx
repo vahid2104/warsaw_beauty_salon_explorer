@@ -1,423 +1,460 @@
-import { useState } from "react";
-import { ArrowLeft, Save, X, Plus } from "lucide-react";
-import { salonData, Salon, districts, categories } from "../../../data/salons";
-import { salonEditStyles as s } from "./salonEdit.styles";
+import { FormEvent, useEffect, useState } from "react";
+import { ArrowLeft, Plus, Save, X } from "lucide-react";
+import type { Salon } from "../../../types/salon";
+import { getSalonById, updateSalon } from "../../../services/salonsApi";
+import { salonEditStyles as styles } from "./salonEdit.styles";
 
 type SalonEditProps = {
-  salonId: string;
-  onBack: () => void;
-  onSave: (updatedSalon: Salon) => void;
+  salonId: number;
+  onCancel: () => void;
+  onSaved: () => void;
+};
+
+const DISTRICTS = [
+  "Bemowo",
+  "Bielany",
+  "Wola",
+  "Śródmieście",
+  "Mokotów",
+  "Żoliborz",
+  "Ochota",
+  "Praga",
+  "Wilanów",
+  "Targówek",
+];
+
+const CATEGORIES = [
+  "Beauty Salon",
+  "Hair Salon",
+  "Nail Salon",
+  "Skin Care Clinic",
+  "Barber",
+  "Spa",
+];
+
+const PRICE_RANGES = ["$", "$$", "$$$"];
+
+const emptySalon: Salon = {
+  id: 0,
+  name: "",
+  category: "Beauty Salon",
+  address: "",
+  district: "Bemowo",
+  phone: null,
+  website: null,
+  services: [],
+  priceRange: null,
+  rating: null,
+  reviewsCount: null,
+  description: null,
 };
 
 export default function SalonEdit({
   salonId,
-  onBack,
-  onSave,
+  onCancel,
+  onSaved,
 }: SalonEditProps) {
-  const originalSalon = salonData.find((s) => s.id === salonId);
-
-  if (!originalSalon) {
-    return (
-      <div className={s.notFoundPage}>
-        <div className={s.notFoundBox}>
-          <h2 className={s.notFoundTitle}>Salon not found</h2>
-          <button onClick={onBack} className={s.notFoundButton}>
-            Back
-          </button>
-        </div>
-      </div>
-    );
-  }
-
-  const [formData, setFormData] = useState<Salon>({ ...originalSalon });
+  const [formData, setFormData] = useState<Salon>(emptySalon);
   const [newService, setNewService] = useState("");
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [successMessage, setSuccessMessage] = useState("");
 
-  const getInputClassName = (fieldName: string) => {
-    return `${s.inputBase} ${
-      errors[fieldName] ? s.inputError : s.inputNormal
-    }`;
-  };
+  useEffect(() => {
+    async function loadSalon() {
+      try {
+        setLoading(true);
+        setError(null);
 
-  const handleInputChange = (field: keyof Salon, value: string | number) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
-
-    if (errors[field]) {
-      setErrors((prev) => {
-        const newErrors = { ...prev };
-        delete newErrors[field];
-        return newErrors;
-      });
+        const data = await getSalonById(salonId);
+        setFormData(data);
+      } catch (err) {
+        console.error(err);
+        setError("Failed to load salon for editing.");
+      } finally {
+        setLoading(false);
+      }
     }
-  };
 
-  const addService = () => {
-    const trimmedService = newService.trim();
+    loadSalon();
+  }, [salonId]);
 
-    if (trimmedService && !formData.services.includes(trimmedService)) {
-      setFormData((prev) => ({
-        ...prev,
-        services: [...prev.services, trimmedService],
-      }));
-      setNewService("");
-    }
-  };
-
-  const removeService = (service: string) => {
-    setFormData((prev) => ({
-      ...prev,
-      services: prev.services.filter((s) => s !== service),
+  const updateField = <K extends keyof Salon>(field: K, value: Salon[K]) => {
+    setFormData((previous) => ({
+      ...previous,
+      [field]: value,
     }));
   };
 
-  const validateForm = () => {
-    const newErrors: Record<string, string> = {};
+  const handleAddService = () => {
+    const cleanedService = newService.trim();
 
-    if (!formData.name.trim()) {
-      newErrors.name = "Name is required";
+    if (!cleanedService) return;
+
+    if (formData.services.includes(cleanedService)) {
+      setNewService("");
+      return;
     }
 
-    if (!formData.address.trim()) {
-      newErrors.address = "Address is required";
-    }
+    setFormData((previous) => ({
+      ...previous,
+      services: [...previous.services, cleanedService],
+    }));
 
-    if (!formData.phone.trim()) {
-      newErrors.phone = "Phone is required";
-    }
-
-    if (formData.rating < 0 || formData.rating > 5) {
-      newErrors.rating = "Rating must be between 0 and 5";
-    }
-
-    if (formData.reviewsCount < 0) {
-      newErrors.reviewsCount = "Reviews count cannot be negative";
-    }
-
-    if (formData.services.length === 0) {
-      newErrors.services = "At least one service is required";
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    setNewService("");
   };
 
-  const handleSave = () => {
-    if (validateForm()) {
-      onSave(formData);
+  const handleRemoveService = (service: string) => {
+    setFormData((previous) => ({
+      ...previous,
+      services: previous.services.filter((item) => item !== service),
+    }));
+  };
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    try {
+      setSaving(true);
+      setError(null);
+      setSuccessMessage("");
+
+      const { id, ...payload } = formData;
+
+      await updateSalon(id, {
+        ...payload,
+        phone: payload.phone || null,
+        website: payload.website || null,
+        priceRange: payload.priceRange || null,
+        rating:
+          payload.rating === null || Number.isNaN(Number(payload.rating))
+            ? null
+            : Number(payload.rating),
+        reviewsCount:
+          payload.reviewsCount === null ||
+          Number.isNaN(Number(payload.reviewsCount))
+            ? null
+            : Number(payload.reviewsCount),
+        description: payload.description || null,
+      });
+
+      setSuccessMessage("Salon details saved successfully.");
+
+      setTimeout(() => {
+        onSaved();
+      }, 600);
+    } catch (err) {
+      console.error(err);
+      setError("Failed to save salon details.");
+    } finally {
+      setSaving(false);
     }
   };
+
+  if (loading) {
+    return (
+      <main className={styles.notFoundPage}>
+        <div className={styles.notFoundBox}>
+          <p className="mb-4 text-gray-600">Loading edit form...</p>
+          <button className={styles.notFoundButton} onClick={onCancel}>
+            Back
+          </button>
+        </div>
+      </main>
+    );
+  }
+
+  if (error && !formData.id) {
+    return (
+      <main className={styles.notFoundPage}>
+        <div className={styles.notFoundBox}>
+          <h2 className={styles.notFoundTitle}>{error}</h2>
+          <button className={styles.notFoundButton} onClick={onCancel}>
+            Back
+          </button>
+        </div>
+      </main>
+    );
+  }
 
   return (
-    <div className={s.page}>
-      {/* Navigation */}
-      <nav className={s.nav}>
-        <div className={s.navContainer}>
-          <div className={s.navInner}>
-            <h1 className={s.navTitle}>Warsaw Beauty Salon Explorer</h1>
+    <main className={styles.page}>
+      <nav className={styles.nav}>
+        <div className={styles.navContainer}>
+          <div className={styles.navInner}>
+            <h1 className={styles.navTitle}>Warsaw Beauty Salon Explorer</h1>
           </div>
         </div>
       </nav>
 
-      {/* Content */}
-      <div className={s.contentContainer}>
-        {/* Back Button */}
-        <button onClick={onBack} className={s.backButton}>
-          <ArrowLeft className={s.backIcon} />
-          <span>Cancel</span>
+      <section className={styles.contentContainer}>
+        <button className={styles.backButton} onClick={onCancel}>
+          <ArrowLeft className={styles.backIcon} />
+          Back to details
         </button>
 
-        {/* Edit Form Card */}
-        <div className={s.card}>
-          {/* Header */}
-          <div className={s.header}>
-            <h1 className={s.headerTitle}>Edit Salon Details</h1>
-            <p className={s.headerSubtitle}>
-              Update information for {originalSalon.name}
+        <article className={styles.card}>
+          <header className={styles.header}>
+            <h2 className={styles.headerTitle}>Edit Salon Details</h2>
+            <p className={styles.headerSubtitle}>
+              Update information for {formData.name}
             </p>
-          </div>
+          </header>
 
-          {/* Form */}
-          <div className={s.form}>
-            {/* Basic Information */}
-            <div className={s.section}>
-              <h3 className={s.sectionTitle}>Basic Information</h3>
+          <form className={styles.form} onSubmit={handleSubmit}>
+            <section className={styles.section}>
+              <h3 className={styles.sectionTitle}>Basic Information</h3>
 
-              <div className={s.twoColumnGrid}>
-                <div className={s.fieldGroup}>
-                  <label htmlFor="name" className={s.label}>
-                    Salon Name *
-                  </label>
+              <div className={styles.twoColumnGrid}>
+                <div className={styles.fieldGroup}>
+                  <label className={styles.label}>Salon Name *</label>
                   <input
-                    id="name"
+                    className={`${styles.inputBase} ${styles.inputNormal}`}
                     type="text"
                     value={formData.name}
-                    onChange={(e) =>
-                      handleInputChange("name", e.target.value)
+                    onChange={(event) =>
+                      updateField("name", event.target.value)
                     }
-                    className={getInputClassName("name")}
+                    required
                   />
-                  {errors.name && (
-                    <p className={s.errorText}>{errors.name}</p>
-                  )}
                 </div>
 
-                <div className={s.fieldGroup}>
-                  <label htmlFor="category" className={s.label}>
-                    Category *
-                  </label>
+                <div className={styles.fieldGroup}>
+                  <label className={styles.label}>Category *</label>
                   <select
-                    id="category"
+                    className={styles.select}
                     value={formData.category}
-                    onChange={(e) =>
-                      handleInputChange("category", e.target.value)
+                    onChange={(event) =>
+                      updateField("category", event.target.value)
                     }
-                    className={s.select}
+                    required
                   >
-                    {categories
-                      .filter((c) => c !== "All Categories")
-                      .map((cat) => (
-                        <option key={cat} value={cat}>
-                          {cat}
-                        </option>
-                      ))}
+                    {CATEGORIES.map((category) => (
+                      <option key={category} value={category}>
+                        {category}
+                      </option>
+                    ))}
                   </select>
                 </div>
 
-                <div className={s.fieldGroup}>
-                  <label htmlFor="district" className={s.label}>
-                    District *
-                  </label>
+                <div className={styles.fieldGroup}>
+                  <label className={styles.label}>District *</label>
                   <select
-                    id="district"
+                    className={styles.select}
                     value={formData.district}
-                    onChange={(e) =>
-                      handleInputChange("district", e.target.value)
+                    onChange={(event) =>
+                      updateField("district", event.target.value)
                     }
-                    className={s.select}
+                    required
                   >
-                    {districts
-                      .filter((d) => d !== "All Districts")
-                      .map((dist) => (
-                        <option key={dist} value={dist}>
-                          {dist}
-                        </option>
-                      ))}
+                    {DISTRICTS.map((district) => (
+                      <option key={district} value={district}>
+                        {district}
+                      </option>
+                    ))}
                   </select>
                 </div>
 
-                <div className={s.fieldGroup}>
-                  <label htmlFor="priceRange" className={s.label}>
-                    Price Range *
-                  </label>
+                <div className={styles.fieldGroup}>
+                  <label className={styles.label}>Price Range</label>
                   <select
-                    id="priceRange"
-                    value={formData.priceRange}
-                    onChange={(e) =>
-                      handleInputChange("priceRange", e.target.value)
+                    className={styles.select}
+                    value={formData.priceRange ?? ""}
+                    onChange={(event) =>
+                      updateField("priceRange", event.target.value || null)
                     }
-                    className={s.select}
                   >
-                    <option value="$">$ - Budget</option>
-                    <option value="$$">$$ - Moderate</option>
-                    <option value="$$$">$$$ - Premium</option>
+                    <option value="">Not available</option>
+                    {PRICE_RANGES.map((range) => (
+                      <option key={range} value={range}>
+                        {range}
+                      </option>
+                    ))}
                   </select>
                 </div>
               </div>
-            </div>
+            </section>
 
-            {/* Contact Information */}
-            <div className={s.sectionWithBorder}>
-              <h3 className={s.sectionTitle}>Contact Information</h3>
+            <section className={styles.sectionWithBorder}>
+              <h3 className={styles.sectionTitle}>Contact Information</h3>
 
-              <div className={s.fieldStack}>
-                <div className={s.fieldGroup}>
-                  <label htmlFor="address" className={s.label}>
-                    Address *
-                  </label>
+              <div className={styles.fieldStack}>
+                <div className={styles.fieldGroup}>
+                  <label className={styles.label}>Address *</label>
                   <input
-                    id="address"
+                    className={`${styles.inputBase} ${styles.inputNormal}`}
                     type="text"
                     value={formData.address}
-                    onChange={(e) =>
-                      handleInputChange("address", e.target.value)
+                    onChange={(event) =>
+                      updateField("address", event.target.value)
                     }
-                    className={getInputClassName("address")}
+                    required
                   />
-                  {errors.address && (
-                    <p className={s.errorText}>{errors.address}</p>
-                  )}
                 </div>
 
-                <div className={s.twoColumnGrid}>
-                  <div className={s.fieldGroup}>
-                    <label htmlFor="phone" className={s.label}>
-                      Phone *
-                    </label>
+                <div className={styles.twoColumnGrid}>
+                  <div className={styles.fieldGroup}>
+                    <label className={styles.label}>Phone</label>
                     <input
-                      id="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) =>
-                        handleInputChange("phone", e.target.value)
+                      className={`${styles.inputBase} ${styles.inputNormal}`}
+                      type="text"
+                      value={formData.phone ?? ""}
+                      onChange={(event) =>
+                        updateField("phone", event.target.value || null)
                       }
-                      className={getInputClassName("phone")}
                     />
-                    {errors.phone && (
-                      <p className={s.errorText}>{errors.phone}</p>
-                    )}
                   </div>
 
-                  <div className={s.fieldGroup}>
-                    <label htmlFor="website" className={s.label}>
-                      Website
-                    </label>
+                  <div className={styles.fieldGroup}>
+                    <label className={styles.label}>Website</label>
                     <input
-                      id="website"
+                      className={`${styles.inputBase} ${styles.inputNormal}`}
                       type="url"
-                      value={formData.website || ""}
-                      onChange={(e) =>
-                        handleInputChange("website", e.target.value)
+                      value={formData.website ?? ""}
+                      onChange={(event) =>
+                        updateField("website", event.target.value || null)
                       }
-                      placeholder="https://"
-                      className={`${s.inputBase} ${s.inputNormal}`}
+                      placeholder="https://example.com"
                     />
                   </div>
                 </div>
               </div>
-            </div>
+            </section>
 
-            {/* Rating & Reviews */}
-            <div className={s.sectionWithBorder}>
-              <h3 className={s.sectionTitle}>Rating & Reviews</h3>
+            <section className={styles.sectionWithBorder}>
+              <h3 className={styles.sectionTitle}>Rating & Reviews</h3>
 
-              <div className={s.twoColumnGrid}>
-                <div className={s.fieldGroup}>
-                  <label htmlFor="rating" className={s.label}>
-                    Rating (0-5) *
-                  </label>
+              <div className={styles.twoColumnGrid}>
+                <div className={styles.fieldGroup}>
+                  <label className={styles.label}>Rating (0-5)</label>
                   <input
-                    id="rating"
+                    className={`${styles.inputBase} ${styles.inputNormal}`}
                     type="number"
                     min="0"
                     max="5"
                     step="0.1"
-                    value={formData.rating}
-                    onChange={(e) =>
-                      handleInputChange(
+                    value={formData.rating ?? ""}
+                    onChange={(event) =>
+                      updateField(
                         "rating",
-                        Number.parseFloat(e.target.value)
+                        event.target.value === ""
+                          ? null
+                          : Number(event.target.value)
                       )
                     }
-                    className={getInputClassName("rating")}
                   />
-                  {errors.rating && (
-                    <p className={s.errorText}>{errors.rating}</p>
-                  )}
                 </div>
 
-                <div className={s.fieldGroup}>
-                  <label htmlFor="reviewsCount" className={s.label}>
-                    Number of Reviews *
-                  </label>
+                <div className={styles.fieldGroup}>
+                  <label className={styles.label}>Number of Reviews</label>
                   <input
-                    id="reviewsCount"
+                    className={`${styles.inputBase} ${styles.inputNormal}`}
                     type="number"
                     min="0"
-                    value={formData.reviewsCount}
-                    onChange={(e) =>
-                      handleInputChange(
+                    value={formData.reviewsCount ?? ""}
+                    onChange={(event) =>
+                      updateField(
                         "reviewsCount",
-                        Number.parseInt(e.target.value)
+                        event.target.value === ""
+                          ? null
+                          : Number(event.target.value)
                       )
                     }
-                    className={getInputClassName("reviewsCount")}
                   />
-                  {errors.reviewsCount && (
-                    <p className={s.errorText}>{errors.reviewsCount}</p>
-                  )}
                 </div>
               </div>
-            </div>
+            </section>
 
-            {/* Services */}
-            <div className={s.sectionWithBorder}>
-              <h3 className={s.sectionTitle}>Services Offered *</h3>
+            <section className={styles.sectionWithBorder}>
+              <h3 className={styles.sectionTitle}>Services Offered</h3>
 
-              <div className={s.fieldStack}>
-                <div className={s.serviceAddRow}>
-                  <input
-                    type="text"
-                    value={newService}
-                    onChange={(e) => setNewService(e.target.value)}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter") {
-                        e.preventDefault();
-                        addService();
-                      }
-                    }}
-                    placeholder="Add a service..."
-                    className={s.serviceInput}
-                  />
+              <div className={styles.serviceAddRow}>
+                <input
+                  className={styles.serviceInput}
+                  type="text"
+                  value={newService}
+                  onChange={(event) => setNewService(event.target.value)}
+                  placeholder="Add a service..."
+                />
 
-                  <button
-                    onClick={addService}
-                    type="button"
-                    className={s.addButton}
-                  >
-                    <Plus className={s.addIcon} />
-                    Add
-                  </button>
-                </div>
+                <button
+                  className={styles.addButton}
+                  type="button"
+                  onClick={handleAddService}
+                >
+                  <Plus className={styles.addIcon} />
+                  Add
+                </button>
+              </div>
 
-                <div className={s.servicesList}>
-                  {formData.services.map((service, idx) => (
-                    <span key={idx} className={s.serviceBadge}>
+              {formData.services.length > 0 ? (
+                <div className={styles.servicesList}>
+                  {formData.services.map((service) => (
+                    <span className={styles.serviceBadge} key={service}>
                       {service}
                       <button
-                        onClick={() => removeService(service)}
+                        className={styles.removeServiceButton}
                         type="button"
-                        className={s.removeServiceButton}
+                        onClick={() => handleRemoveService(service)}
+                        aria-label={`Remove ${service}`}
                       >
-                        <X className={s.removeServiceIcon} />
+                        <X className={styles.removeServiceIcon} />
                       </button>
                     </span>
                   ))}
                 </div>
+              ) : (
+                <p className="text-sm text-gray-500">
+                  No services added yet.
+                </p>
+              )}
+            </section>
 
-                {errors.services && (
-                  <p className={s.serviceErrorText}>{errors.services}</p>
-                )}
-              </div>
-            </div>
-
-            {/* Description */}
-            <div className={s.sectionWithBorder}>
-              <h3 className={s.sectionTitle}>Description</h3>
+            <section className={styles.sectionWithBorder}>
+              <h3 className={styles.sectionTitle}>Description</h3>
 
               <textarea
-                value={formData.description}
-                onChange={(e) =>
-                  handleInputChange("description", e.target.value)
+                className={styles.textarea}
+                rows={5}
+                value={formData.description ?? ""}
+                onChange={(event) =>
+                  updateField("description", event.target.value || null)
                 }
-                rows={4}
-                className={s.textarea}
+                placeholder="Short description about the salon..."
               />
-            </div>
+            </section>
 
-            {/* Action Buttons */}
-            <div className={s.actionButtons}>
-              <button onClick={handleSave} className={s.saveButton}>
-                <Save className={s.saveIcon} />
-                Save Changes
+            {error && <p className={styles.errorText}>{error}</p>}
+
+            {successMessage && (
+              <p className="text-sm text-green-700 bg-green-50 border border-green-200 rounded-lg px-4 py-3">
+                {successMessage}
+              </p>
+            )}
+
+            <div className={styles.actionButtons}>
+              <button
+                className={styles.saveButton}
+                type="submit"
+                disabled={saving}
+              >
+                <Save className={styles.saveIcon} />
+                {saving ? "Saving..." : "Save Changes"}
               </button>
 
-              <button onClick={onBack} className={s.cancelButton}>
+              <button
+                className={styles.cancelButton}
+                type="button"
+                onClick={onCancel}
+                disabled={saving}
+              >
                 Cancel
               </button>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
+          </form>
+        </article>
+      </section>
+    </main>
   );
 }
