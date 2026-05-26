@@ -1,0 +1,41 @@
+[
+  {
+    "name": "Fit & Beauty",
+    "category": "Beauty Salon",
+    "address": "Mroczna 7, 01-456 Warszawa",
+    "district": "Bemowo",
+    "phone": "664 330 697",
+    "website": "https://facebook.com",
+    "services": ["Beauty", "Facial", "Manicure"],
+    "priceRange": null,
+    "rating": 4.7,
+    "reviewsCount": 130,
+    "description": "Beauty salon in Warsaw offering beauty and cosmetic services."
+  },
+  {
+    "name": "SELF CONCEPT BEAUTY BAR",
+    "category": "Beauty Salon",
+    "address": "Kędzierskiego 12/33b, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": ["Beauty"],
+    "priceRange": null,
+    "rating": 4.8,
+    "reviewsCount": 35,
+    "description": "Beauty salon based in Warsaw."
+  },
+  {
+    "name": "Salon fryzjerski Mya Beauty",
+    "category": "Hair Salon",
+    "address": "Władysława Broniewskiego 74, Warszawa",
+    "district": "Bielany",
+    "phone": null,
+    "website": null,
+    "services": ["Haircut", "Hair coloring"],
+    "priceRange": null,
+    "rating": 4.7,
+    "reviewsCount": 84,
+    "description": "Hair salon offering hair care services in Warsaw."
+  }
+]
