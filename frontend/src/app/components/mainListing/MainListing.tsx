@@ -262,8 +262,12 @@ export default function MainListing({ onViewDetails }: MainListingProps) {
                             <span className={styles.categoryBadge}>
                               {salon.category}
                             </span>
-                            <span className={styles.dot}>•</span>
-                            <span>{salon.priceRange ?? "Price not available"}</span>
+                            {salon.priceRange && (
+                              <>
+                                <span className={styles.dot}>•</span>
+                                <span>{salon.priceRange}</span>
+                              </>
+                            )}
                           </div>
                         </div>
                       </div>

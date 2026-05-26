@@ -52,10 +52,10 @@ export const mainListingStyles = {
   loadingLineShort: "h-3 bg-gray-200 rounded w-5/6",
 
   salonCard:
-    "bg-white rounded-xl border border-gray-200 hover:border-teal-300 hover:shadow-lg transition-all duration-200 overflow-hidden",
-  salonCardContent: "p-6",
+    "flex-1 flex-col bg-white rounded-xl border border-gray-200 hover:border-teal-300 hover:shadow-lg transition-all duration-200 overflow-hidden",
+  salonCardContent: "p-6 flex-1",
   salonHeader: "flex items-start justify-between mb-3",
-  salonHeaderContent: "flex-1",
+  salonHeaderContent: "flex h-25 flex-col justify-between",
   salonName: "text-gray-900 mb-1",
   salonMeta: "flex items-center gap-2 text-sm text-gray-600",
   categoryBadge: "px-2 py-0.5 bg-teal-50 text-teal-700 rounded-md",
@@ -76,5 +76,5 @@ export const mainListingStyles = {
   moreServices: "px-2 py-1 text-gray-500 text-xs",
 
   detailsButton:
-    "w-full bg-teal-600 hover:bg-teal-700 text-white py-2.5 px-4 rounded-lg transition-colors",
+    "w-full mt-auto bg-teal-600 hover:bg-teal-700 text-white py-2.5 px-4 rounded-lg transition-colors",
 };
