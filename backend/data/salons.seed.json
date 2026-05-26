@@ -1,29 +1,238 @@
 [
   {
-    "name": "Fit & Beauty",
-    "category": "Beauty Salon",
-    "address": "Mroczna 7, 01-456 Warszawa",
-    "district": "Bemowo",
-    "phone": "664 330 697",
-    "website": "https://facebook.com",
-    "services": ["Beauty", "Facial", "Manicure"],
-    "priceRange": null,
-    "rating": 4.7,
-    "reviewsCount": 130,
-    "description": "Beauty salon in Warsaw offering beauty and cosmetic services."
-  },
-  {
     "name": "SELF CONCEPT BEAUTY BAR",
     "category": "Beauty Salon",
     "address": "Kędzierskiego 12/33b, Warszawa",
     "district": "Bemowo",
     "phone": null,
     "website": null,
-    "services": ["Beauty"],
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
     "priceRange": null,
     "rating": 4.8,
     "reviewsCount": 35,
-    "description": "Beauty salon based in Warsaw."
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Hair & Club. Salon fryzjerski, barber, kosmetyka, manicure, pedicure, masaż, solarium",
+    "category": "Barber",
+    "address": "Morcinka 5/lok 10, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Men's haircut",
+      "Beard grooming",
+      "Manicure",
+      "Pedicure",
+      "Hair services",
+      "Barber services"
+    ],
+    "priceRange": null,
+    "rating": 4.8,
+    "reviewsCount": 242,
+    "description": "Barber in Warsaw offering men's haircut, beard grooming services."
+  },
+  {
+    "name": "Stopologia Magdalena Ćwikło",
+    "category": "Nail Salon",
+    "address": "Pabla Nerudy 9, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Manicure",
+      "Pedicure"
+    ],
+    "priceRange": null,
+    "rating": 4.7,
+    "reviewsCount": 100,
+    "description": "Nail Salon in Warsaw offering manicure, pedicure services."
+  },
+  {
+    "name": "Fit & Beauty",
+    "category": "Beauty Salon",
+    "address": "Mroczna 7, Warszawa",
+    "district": "Bemowo",
+    "phone": "664 330 697",
+    "website": "https://facebook.com",
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.7,
+    "reviewsCount": 130,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Salon Kosmetyczny Fryzjerski Beauty Moments",
+    "category": "Beauty Salon",
+    "address": "Gen. Tadeusza Pełczyńskiego 14/U14, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology",
+      "Hair services"
+    ],
+    "priceRange": null,
+    "rating": 4.6,
+    "reviewsCount": 128,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Sculpt Evolution",
+    "category": "Beauty Salon",
+    "address": "Morcinka 5/lok 7, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 5.0,
+    "reviewsCount": 14,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Beauty Studio Tati",
+    "category": "Beauty Salon",
+    "address": "Dywizjonu 303 bud/139, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.8,
+    "reviewsCount": 78,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Her Beauty Space",
+    "category": "Nail Salon",
+    "address": "Wrocławska 7e, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Manicure",
+      "Pedicure",
+      "Spa treatments"
+    ],
+    "priceRange": null,
+    "rating": 4.9,
+    "reviewsCount": 16,
+    "description": "Nail Salon in Warsaw offering manicure, pedicure services."
+  },
+  {
+    "name": "Beauty Place to Change - OCZYSZCZANIE WODOROWE, MEZOTERAPIA, STYLIZACJA PAZNOKCI, TERAPIE TRĄDZIKOWE, LAMINACJA BRWI I RZĘS",
+    "category": "Beauty Salon",
+    "address": "Księcia Janusza 62/lok.231, Warszawa",
+    "district": "Wola",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology",
+      "Nail styling",
+      "Brow styling",
+      "Lash styling",
+      "Acne therapy"
+    ],
+    "priceRange": null,
+    "rating": 4.8,
+    "reviewsCount": 125,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Beauty Centrum",
+    "category": "Beauty Salon",
+    "address": "Lekka 3/u2, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 5.0,
+    "reviewsCount": 27,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Moretti Beauty Space",
+    "category": "Nail Salon",
+    "address": "ppłk. Wacława Szadkowskiego 5a, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Manicure",
+      "Pedicure",
+      "Spa treatments"
+    ],
+    "priceRange": null,
+    "rating": 5.0,
+    "reviewsCount": 25,
+    "description": "Nail Salon in Warsaw offering manicure, pedicure services."
+  },
+  {
+    "name": "Viktoria Beauty Room",
+    "category": "Beauty Salon",
+    "address": "Radziwie 3/lok. 1, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 5.0,
+    "reviewsCount": 83,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "BLIŹNIARY W AKCJI- SALON BEAUTY",
+    "category": "Skin Care Clinic",
+    "address": "Josepha Conrada 18 Prześwit 2, obok klatki 7, Warszawa",
+    "district": "Bielany",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Skin care",
+      "Facial treatments"
+    ],
+    "priceRange": null,
+    "rating": 5.0,
+    "reviewsCount": 17,
+    "description": "Skin Care Clinic in Warsaw offering skin care, facial treatments services."
+  },
+  {
+    "name": "Salon Perla",
+    "category": "Hair Salon",
+    "address": "Powstańców Śląskich 123/68, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Haircut",
+      "Hair styling"
+    ],
+    "priceRange": null,
+    "rating": 4.4,
+    "reviewsCount": 49,
+    "description": "Hair Salon in Warsaw offering haircut, hair styling services."
   },
   {
     "name": "Salon fryzjerski Mya Beauty",
@@ -32,10 +241,1745 @@
     "district": "Bielany",
     "phone": null,
     "website": null,
-    "services": ["Haircut", "Hair coloring"],
+    "services": [
+      "Haircut",
+      "Hair styling",
+      "Hair services"
+    ],
     "priceRange": null,
     "rating": 4.7,
     "reviewsCount": 84,
-    "description": "Hair salon offering hair care services in Warsaw."
+    "description": "Hair Salon in Warsaw offering haircut, hair styling services."
+  },
+  {
+    "name": "WoMen- Health & Beauty Center",
+    "category": "Beauty Salon",
+    "address": "Górczewska 200/138, Warszawa",
+    "district": "Warsaw",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.8,
+    "reviewsCount": 98,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Be Beauty",
+    "category": "Beauty Salon",
+    "address": "Czumy 18, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.7,
+    "reviewsCount": 11,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "A & M Beauty Studio",
+    "category": "Beauty Salon",
+    "address": "Powstańców Śląskich 87/Lokal U13, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.9,
+    "reviewsCount": 108,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Diamond Beauty & Spa",
+    "category": "Beauty Salon",
+    "address": "Gen. Klemensa Stanisława Rudnickiego 3A/lok. 2H, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology",
+      "Spa treatments"
+    ],
+    "priceRange": null,
+    "rating": 4.9,
+    "reviewsCount": 60,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Wyluzuj!",
+    "category": "Skin Care Clinic",
+    "address": "Powstańców Śląskich 106, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Skin care",
+      "Facial treatments"
+    ],
+    "priceRange": null,
+    "rating": 5.0,
+    "reviewsCount": 166,
+    "description": "Skin Care Clinic in Warsaw offering skin care, facial treatments services."
+  },
+  {
+    "name": "Adriatyk. Salon piękności",
+    "category": "Beauty Salon",
+    "address": "Morcinka 5, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.6,
+    "reviewsCount": 44,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "BBeauty Bemowo Pełczyńskiego - Laser frakcyjny Rf frakcyjny Medycyna estetyczna Light Sheer Stellar Eximia",
+    "category": "Beauty Salon",
+    "address": "Gen. Tadeusza Pełczyńskiego 14, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology",
+      "Laser hair removal"
+    ],
+    "priceRange": null,
+    "rating": 4.9,
+    "reviewsCount": 45,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Gel nails Dus",
+    "category": "Beauty Salon",
+    "address": "Swarzewska 40, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology",
+      "Nail styling"
+    ],
+    "priceRange": null,
+    "rating": 4.7,
+    "reviewsCount": 112,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Salon Kosmetyczny Malina - Fryzjer, Manicure i Depilacja Laserowa, Koloryzacja | Warszawa Bemowo",
+    "category": "Beauty Salon",
+    "address": "Osmańczyka 22, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology",
+      "Manicure",
+      "Hair services",
+      "Laser hair removal",
+      "Hair removal"
+    ],
+    "priceRange": null,
+    "rating": 4.8,
+    "reviewsCount": 223,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Beauty Now | Salon Urody, Salon Fryzjerski",
+    "category": "Beauty Salon",
+    "address": "Stanisława Dygata 3/u3, Warszawa",
+    "district": "Warsaw",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology",
+      "Hair services"
+    ],
+    "priceRange": null,
+    "rating": 4.7,
+    "reviewsCount": 62,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Beauty Art Studio Urody",
+    "category": "Beauty Salon",
+    "address": "Chabrowa 4, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 5.0,
+    "reviewsCount": 62,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Piękna Sprawa",
+    "category": "Beauty Salon",
+    "address": "Powstańców Śląskich 108a/9, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.6,
+    "reviewsCount": 101,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Secret Beauty House",
+    "category": "Nail Salon",
+    "address": "Górczewska 82, Warszawa",
+    "district": "Wola",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Manicure",
+      "Pedicure"
+    ],
+    "priceRange": null,
+    "rating": 5.0,
+    "reviewsCount": 17,
+    "description": "Nail Salon in Warsaw offering manicure, pedicure services."
+  },
+  {
+    "name": "Beauty Nails Marta",
+    "category": "Skin Care Clinic",
+    "address": "Gen. Tadeusza Pełczyńskiego 14/Lokal U4, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Skin care",
+      "Facial treatments",
+      "Nail styling"
+    ],
+    "priceRange": null,
+    "rating": 4.9,
+    "reviewsCount": 51,
+    "description": "Skin Care Clinic in Warsaw offering skin care, facial treatments services."
+  },
+  {
+    "name": "Velvet Beauty Studio",
+    "category": "Beauty Salon",
+    "address": "Josepha Conrada 13, Warszawa",
+    "district": "Bielany",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": null,
+    "reviewsCount": null,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "STUDIO KWITNĄCA, ul. Kwitnąca 7A - Manicure, pedicure, stylizacja paznokci Warszawa Bielany",
+    "category": "Nail Salon",
+    "address": "Kwitnąca 7A, Warszawa",
+    "district": "Bielany",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Manicure",
+      "Pedicure",
+      "Nail styling"
+    ],
+    "priceRange": null,
+    "rating": 4.9,
+    "reviewsCount": 57,
+    "description": "Nail Salon in Warsaw offering manicure, pedicure services."
+  },
+  {
+    "name": "Nails & Beauty Warszawa",
+    "category": "Nail Salon",
+    "address": "Elekcyjna 19/u3, Warszawa",
+    "district": "Warsaw",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Manicure",
+      "Pedicure",
+      "Nail styling"
+    ],
+    "priceRange": null,
+    "rating": 5.0,
+    "reviewsCount": 39,
+    "description": "Nail Salon in Warsaw offering manicure, pedicure services."
+  },
+  {
+    "name": "BBeauty Beauty Salon",
+    "category": "Beauty Salon",
+    "address": "Jana Kazimierza 60, Warszawa",
+    "district": "Warsaw",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.8,
+    "reviewsCount": 99,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Top Nails Beauty",
+    "category": "Nail Salon",
+    "address": "Josepha Conrada 15A/paw. 25, Warszawa",
+    "district": "Bielany",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Manicure",
+      "Pedicure",
+      "Nail styling"
+    ],
+    "priceRange": null,
+    "rating": 4.4,
+    "reviewsCount": 48,
+    "description": "Nail Salon in Warsaw offering manicure, pedicure services."
+  },
+  {
+    "name": "MAKEUP Beauty Atelier",
+    "category": "Beauty Salon",
+    "address": "Górczewska 124, CH Wola Park, poziom 0/lok. G070, Warszawa",
+    "district": "Wola",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.5,
+    "reviewsCount": 53,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Pracownia Urody",
+    "category": "Beauty Salon",
+    "address": "Josepha Conrada 8/lok. 1, Warszawa",
+    "district": "Bielany",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.3,
+    "reviewsCount": 63,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Beauty Rosa",
+    "category": "Beauty Salon",
+    "address": "Powstańców Śląskich 3A/lok.U5, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.8,
+    "reviewsCount": 49,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "BEAUTY BY ME | Bielany | Paznokcie, Hybryda, Przedłużanie, Manicure, Pedicure",
+    "category": "Beauty Salon",
+    "address": "BEAUTY BY ME, Aleja Zjednoczenia 11, Warszawa",
+    "district": "Warsaw",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology",
+      "Manicure",
+      "Pedicure",
+      "Nail styling",
+      "Hybrid nails"
+    ],
+    "priceRange": null,
+    "rating": 4.8,
+    "reviewsCount": 34,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Salon fryzjerski Manicure Pedicure Beauty Club Salon piękności",
+    "category": "Barber",
+    "address": "Batalionów Chłopskich 78, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Men's haircut",
+      "Beard grooming",
+      "Manicure",
+      "Pedicure",
+      "Hair services"
+    ],
+    "priceRange": null,
+    "rating": 4.6,
+    "reviewsCount": 34,
+    "description": "Barber in Warsaw offering men's haircut, beard grooming services."
+  },
+  {
+    "name": "KM Beauty Center",
+    "category": "Beauty Salon",
+    "address": "Żelazna 67/13L, Warszawa",
+    "district": "Wola",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.9,
+    "reviewsCount": 255,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Be Beauty-Salon urody",
+    "category": "Hair Salon",
+    "address": "Borowej Góry 2, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Haircut",
+      "Hair styling"
+    ],
+    "priceRange": null,
+    "rating": 4.9,
+    "reviewsCount": 19,
+    "description": "Hair Salon in Warsaw offering haircut, hair styling services."
+  },
+  {
+    "name": "Salon fryzjerski u Ilony",
+    "category": "Beauty Salon",
+    "address": "Wrocławska 27, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology",
+      "Hair services"
+    ],
+    "priceRange": null,
+    "rating": 4.8,
+    "reviewsCount": 52,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "BEA Kosmetologia",
+    "category": "Skin Care Clinic",
+    "address": "Ziębicka 4, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Skin care",
+      "Facial treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.9,
+    "reviewsCount": 77,
+    "description": "Skin Care Clinic in Warsaw offering skin care, facial treatments services."
+  },
+  {
+    "name": "CHERRY - Salon Urody, Karolina Wiśniewska",
+    "category": "Hair Salon",
+    "address": "Dąbrowskiej 15, Warszawa",
+    "district": "Warsaw",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Haircut",
+      "Hair styling"
+    ],
+    "priceRange": null,
+    "rating": 4.8,
+    "reviewsCount": 42,
+    "description": "Hair Salon in Warsaw offering haircut, hair styling services."
+  },
+  {
+    "name": "Beauty Mania",
+    "category": "Skin Care Clinic",
+    "address": "Zygmunta Krasińskiego 57, Warszawa",
+    "district": "Żoliborz",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Skin care",
+      "Facial treatments"
+    ],
+    "priceRange": null,
+    "rating": 4.7,
+    "reviewsCount": 82,
+    "description": "Skin Care Clinic in Warsaw offering skin care, facial treatments services."
+  },
+  {
+    "name": "House of PINK beauty bar",
+    "category": "Beauty Salon",
+    "address": "Ogólna 7/61, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 5.0,
+    "reviewsCount": 55,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Studio Paznokci Marta Bączek",
+    "category": "Nail Salon",
+    "address": "Powstańców Śląskich 104/lok.205, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Manicure",
+      "Pedicure",
+      "Nail styling"
+    ],
+    "priceRange": null,
+    "rating": 5.0,
+    "reviewsCount": 16,
+    "description": "Nail Salon in Warsaw offering manicure, pedicure services."
+  },
+  {
+    "name": "BE UNIQUE BEAUTY SALON / Rzęsy / Brwi / Makijaże",
+    "category": "Beauty Salon",
+    "address": "Przyokopowa 43, Warszawa",
+    "district": "Wola",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology",
+      "Brow styling",
+      "Lash styling",
+      "Makeup"
+    ],
+    "priceRange": null,
+    "rating": 4.9,
+    "reviewsCount": 399,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Przystań Piękna",
+    "category": "Beauty Salon",
+    "address": "Josepha Conrada 11, Warszawa",
+    "district": "Bielany",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 5.0,
+    "reviewsCount": 18,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Beauty Square 19",
+    "category": "Beauty Salon",
+    "address": "Kolejowa 49A/U5, Warszawa",
+    "district": "Wola",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.8,
+    "reviewsCount": 164,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Pan i Pani salon",
+    "category": "Beauty Salon",
+    "address": "Wrocławska 25, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.7,
+    "reviewsCount": 147,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "BM BEAUTY Studio kosmetyczne",
+    "category": "Beauty Salon",
+    "address": "Smolna 8, Warszawa",
+    "district": "Śródmieście",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 5.0,
+    "reviewsCount": 11,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Studio Urody Od Nowa",
+    "category": "Beauty Salon",
+    "address": "Wrocławska 18, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.4,
+    "reviewsCount": 42,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Beauty Medical Spa",
+    "category": "Beauty Salon",
+    "address": "Ludwika Rydygiera 19, Warszawa",
+    "district": "Żoliborz",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology",
+      "Spa treatments"
+    ],
+    "priceRange": null,
+    "rating": 4.6,
+    "reviewsCount": 57,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "La bella Beauty hair",
+    "category": "Hair Salon",
+    "address": "Księcia Janusza 23, Warszawa",
+    "district": "Wola",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Haircut",
+      "Hair styling",
+      "Hair services"
+    ],
+    "priceRange": null,
+    "rating": 4.9,
+    "reviewsCount": 28,
+    "description": "Hair Salon in Warsaw offering haircut, hair styling services."
+  },
+  {
+    "name": "Queen Beauty Salon - Afro Hair and Beauty Salon",
+    "category": "Hair Salon",
+    "address": "Powstańców Śląskich 26, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Haircut",
+      "Hair styling",
+      "Hair services"
+    ],
+    "priceRange": null,
+    "rating": 4.6,
+    "reviewsCount": 155,
+    "description": "Hair Salon in Warsaw offering haircut, hair styling services."
+  },
+  {
+    "name": "Kwestia Paznokcia",
+    "category": "Nail Salon",
+    "address": "Kazubów 6A/klatka II, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Manicure",
+      "Pedicure",
+      "Nail styling"
+    ],
+    "priceRange": null,
+    "rating": 4.8,
+    "reviewsCount": 73,
+    "description": "Nail Salon in Warsaw offering manicure, pedicure services."
+  },
+  {
+    "name": "The Beauty Stories",
+    "category": "Skin Care Clinic",
+    "address": "Kłopot 4/Lok U1.6, Warszawa",
+    "district": "Żoliborz",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Skin care",
+      "Facial treatments"
+    ],
+    "priceRange": null,
+    "rating": 5.0,
+    "reviewsCount": 80,
+    "description": "Skin Care Clinic in Warsaw offering skin care, facial treatments services."
+  },
+  {
+    "name": "Beauty Room by Claudyna",
+    "category": "Beauty Salon",
+    "address": "Gen. Tadeusza Pełczyńskiego 14a/76, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 5.0,
+    "reviewsCount": 5,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Beauty Progress Iwetta Kłosowicz",
+    "category": "Skin Care Clinic",
+    "address": "św. Stanisława 6, Warszawa",
+    "district": "Wola",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Skin care",
+      "Facial treatments"
+    ],
+    "priceRange": null,
+    "rating": 5.0,
+    "reviewsCount": 17,
+    "description": "Skin Care Clinic in Warsaw offering skin care, facial treatments services."
+  },
+  {
+    "name": "ANANTA beauty space",
+    "category": "Beauty Salon",
+    "address": "Kłopot 4/u1.1, Warszawa",
+    "district": "Żoliborz",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology",
+      "Spa treatments"
+    ],
+    "priceRange": null,
+    "rating": 4.9,
+    "reviewsCount": 97,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Manicure & Pedicure Warszawa Bemowo - Love in Beauty",
+    "category": "Nail Salon",
+    "address": "Powstańców Śląskich 69d, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Manicure",
+      "Pedicure"
+    ],
+    "priceRange": null,
+    "rating": 4.7,
+    "reviewsCount": 27,
+    "description": "Nail Salon in Warsaw offering manicure, pedicure services."
+  },
+  {
+    "name": "ProBeauty",
+    "category": "Beauty Salon",
+    "address": "Jana Kazimierza 11B, Warszawa",
+    "district": "Warsaw",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.5,
+    "reviewsCount": 57,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "El Studio Masaż Kosmetyka Przedłużanie Rzęs",
+    "category": "Beauty Salon",
+    "address": "Łagowska 1/H2, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology",
+      "Lash styling",
+      "Massage"
+    ],
+    "priceRange": null,
+    "rating": 4.8,
+    "reviewsCount": 33,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Piękną Być",
+    "category": "Beauty Salon",
+    "address": "Sokratesa 11, Warszawa",
+    "district": "Bielany",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.8,
+    "reviewsCount": 31,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Beauty Bar Marzeń",
+    "category": "Beauty Salon",
+    "address": "al. Jana Pawła II 43A/33a, Warszawa",
+    "district": "Wola",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.6,
+    "reviewsCount": 18,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Salon Happy Nails and Face",
+    "category": "Beauty Salon",
+    "address": "Osmańczyka 18, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology",
+      "Nail styling"
+    ],
+    "priceRange": null,
+    "rating": 5.0,
+    "reviewsCount": 5,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Beauty place",
+    "category": "Beauty Salon",
+    "address": "Kolejowa 45a/lok 23u, Warszawa",
+    "district": "Wola",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 5.0,
+    "reviewsCount": 60,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Wolf Studio",
+    "category": "Nail Salon",
+    "address": "Władysława Broniewskiego 59A, Warszawa",
+    "district": "Bielany",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Manicure",
+      "Pedicure"
+    ],
+    "priceRange": null,
+    "rating": 4.8,
+    "reviewsCount": 32,
+    "description": "Nail Salon in Warsaw offering manicure, pedicure services."
+  },
+  {
+    "name": "STUDIO | A&A",
+    "category": "Beauty Salon",
+    "address": "Powstańców Śląskich 89D/234, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.7,
+    "reviewsCount": 33,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "New Era Beauty",
+    "category": "Beauty Salon",
+    "address": "Lazurowa 21/lok. U4, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.9,
+    "reviewsCount": 193,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Healthy Beauty Salon Kosmetyczny Warszawa",
+    "category": "Skin Care Clinic",
+    "address": "Kolejowa 43/U4, Warszawa",
+    "district": "Wola",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Skin care",
+      "Facial treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.7,
+    "reviewsCount": 133,
+    "description": "Skin Care Clinic in Warsaw offering skin care, facial treatments services."
+  },
+  {
+    "name": "IraNails Studio paznokci",
+    "category": "Beauty Salon",
+    "address": "Widawska 23/lok.C, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology",
+      "Nail styling"
+    ],
+    "priceRange": null,
+    "rating": 5.0,
+    "reviewsCount": 15,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Beauty Oasis",
+    "category": "Beauty Salon",
+    "address": "Gustawa Daniłowskiego 3, Warszawa",
+    "district": "Bielany",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.3,
+    "reviewsCount": 9,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "All Hair. Studio. Gościcki Ł.",
+    "category": "Hair Salon",
+    "address": "Aleja Władysława Reymonta 12a, Warszawa",
+    "district": "Bielany",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Haircut",
+      "Hair styling",
+      "Hair services"
+    ],
+    "priceRange": null,
+    "rating": 4.7,
+    "reviewsCount": 123,
+    "description": "Hair Salon in Warsaw offering haircut, hair styling services."
+  },
+  {
+    "name": "Studio 303 - Salon cosmetics - hairdresser",
+    "category": "Skin Care Clinic",
+    "address": "Dywizjonu 303 129, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Skin care",
+      "Facial treatments",
+      "Hair services"
+    ],
+    "priceRange": null,
+    "rating": 4.5,
+    "reviewsCount": 104,
+    "description": "Skin Care Clinic in Warsaw offering skin care, facial treatments services."
+  },
+  {
+    "name": "Eco Beauty Salon salon kosmetyczny Warszawa Wola",
+    "category": "Beauty Salon",
+    "address": "Juliana Konstantego Ordona 12D/2U, Warszawa",
+    "district": "Wola",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 5.0,
+    "reviewsCount": 85,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Monika Galimska Beauty Studio",
+    "category": "Nail Salon",
+    "address": "Jana Kochanowskiego 10A/lokal 20, Warszawa",
+    "district": "Bielany",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Manicure",
+      "Pedicure"
+    ],
+    "priceRange": null,
+    "rating": 5.0,
+    "reviewsCount": 32,
+    "description": "Nail Salon in Warsaw offering manicure, pedicure services."
+  },
+  {
+    "name": "Hi Beauty",
+    "category": "Beauty Salon",
+    "address": "Dźwigowa 6, Warszawa",
+    "district": "Włochy",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.8,
+    "reviewsCount": 155,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Velvet Skin Clinic",
+    "category": "Skin Care Clinic",
+    "address": "30 Świętokrzyska, Warszawa",
+    "district": "Śródmieście",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Skin care",
+      "Facial treatments"
+    ],
+    "priceRange": null,
+    "rating": 4.7,
+    "reviewsCount": 195,
+    "description": "Skin Care Clinic in Warsaw offering skin care, facial treatments services."
+  },
+  {
+    "name": "MR KHAN BARBERSHOP",
+    "category": "Hair Salon",
+    "address": "35A Człuchowska, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Haircut",
+      "Hair styling",
+      "Barber services"
+    ],
+    "priceRange": null,
+    "rating": 4.9,
+    "reviewsCount": 93,
+    "description": "Hair Salon in Warsaw offering haircut, hair styling services."
+  },
+  {
+    "name": "Misumari Nail Bar Manicure Pedicure Pielęgnacja dłoni Paznokcie Hybryda",
+    "category": "Beauty Salon",
+    "address": "Góralska 6a, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology",
+      "Manicure",
+      "Pedicure",
+      "Nail styling",
+      "Hybrid nails"
+    ],
+    "priceRange": null,
+    "rating": 4.5,
+    "reviewsCount": 37,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Beauty & Massage",
+    "category": "Spa",
+    "address": "15/38, Kępna, Warszawa",
+    "district": "Praga",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Massage",
+      "Spa treatments"
+    ],
+    "priceRange": null,
+    "rating": 4.7,
+    "reviewsCount": 137,
+    "description": "Spa in Warsaw offering massage, spa treatments services."
+  },
+  {
+    "name": "I.G. HAIR PRACOWNIA FRYZJERSKA",
+    "category": "Barber",
+    "address": "Wrocławska 21/2A, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Men's haircut",
+      "Beard grooming",
+      "Hair services"
+    ],
+    "priceRange": null,
+    "rating": 4.7,
+    "reviewsCount": 235,
+    "description": "Barber in Warsaw offering men's haircut, beard grooming services."
+  },
+  {
+    "name": "Cosmo Studio Urody Bemowo",
+    "category": "Nail Salon",
+    "address": "Górczewska 228a, Warszawa",
+    "district": "Warsaw",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Manicure",
+      "Pedicure"
+    ],
+    "priceRange": null,
+    "rating": 4.3,
+    "reviewsCount": 102,
+    "description": "Nail Salon in Warsaw offering manicure, pedicure services."
+  },
+  {
+    "name": "Easy Beauty",
+    "category": "Beauty Salon",
+    "address": "Obozowa 61/u9, Warszawa",
+    "district": "Wola",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.5,
+    "reviewsCount": 30,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Easy Beauty Studio",
+    "category": "Nail Salon",
+    "address": "Aleja Władysława Reymonta 54, Warszawa",
+    "district": "Bielany",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Manicure",
+      "Pedicure"
+    ],
+    "priceRange": null,
+    "rating": 5.0,
+    "reviewsCount": 5,
+    "description": "Nail Salon in Warsaw offering manicure, pedicure services."
+  },
+  {
+    "name": "Beauty Room",
+    "category": "Barber",
+    "address": "Stanisława Dygata 3, Warszawa",
+    "district": "Warsaw",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Men's haircut",
+      "Beard grooming"
+    ],
+    "priceRange": null,
+    "rating": 4.7,
+    "reviewsCount": 157,
+    "description": "Barber in Warsaw offering men's haircut, beard grooming services."
+  },
+  {
+    "name": "LEO BEAUTY CLUB",
+    "category": "Beauty Salon",
+    "address": "Ogrodowa 58, Warszawa",
+    "district": "Wola",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.7,
+    "reviewsCount": 569,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Salon Urody Krystyna Wierzbicka",
+    "category": "Barber",
+    "address": "Pirenejska 10, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Men's haircut",
+      "Beard grooming"
+    ],
+    "priceRange": null,
+    "rating": 4.5,
+    "reviewsCount": 26,
+    "description": "Barber in Warsaw offering men's haircut, beard grooming services."
+  },
+  {
+    "name": "La Bonita Beauty & Hair Studio",
+    "category": "Hair Salon",
+    "address": "Człuchowska 49/lokal U7, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Haircut",
+      "Hair styling",
+      "Hair services"
+    ],
+    "priceRange": null,
+    "rating": 4.7,
+    "reviewsCount": 26,
+    "description": "Hair Salon in Warsaw offering haircut, hair styling services."
+  },
+  {
+    "name": "Oem Beauty Bielany",
+    "category": "Skin Care Clinic",
+    "address": "Jana Kasprowicza 119A/lokal U13, Warszawa",
+    "district": "Bielany",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Skin care",
+      "Facial treatments"
+    ],
+    "priceRange": null,
+    "rating": 5.0,
+    "reviewsCount": 17,
+    "description": "Skin Care Clinic in Warsaw offering skin care, facial treatments services."
+  },
+  {
+    "name": "MagArt Salon Kosmetyczny",
+    "category": "Skin Care Clinic",
+    "address": "Gustawa Daniłowskiego 2/4, Warszawa",
+    "district": "Bielany",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Skin care",
+      "Facial treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.9,
+    "reviewsCount": 39,
+    "description": "Skin Care Clinic in Warsaw offering skin care, facial treatments services."
+  },
+  {
+    "name": "Salon Piękności Denique Galeria Bemowo",
+    "category": "Beauty Salon",
+    "address": "Powstańców Śląskich 126, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.1,
+    "reviewsCount": 359,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Trendi Beauty House",
+    "category": "Beauty Salon",
+    "address": "Kolejowa 43/U3, Warszawa",
+    "district": "Wola",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.8,
+    "reviewsCount": 97,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "HaMi Beauty Salon Kasprzaka 29/U17",
+    "category": "Nail Salon",
+    "address": "Marcina Kasprzaka 29/U17, Warszawa",
+    "district": "Wola",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Manicure",
+      "Pedicure"
+    ],
+    "priceRange": null,
+    "rating": 4.9,
+    "reviewsCount": 63,
+    "description": "Nail Salon in Warsaw offering manicure, pedicure services."
+  },
+  {
+    "name": "Candy Nails Room",
+    "category": "Nail Salon",
+    "address": "Josepha Conrada 3, Warszawa",
+    "district": "Bielany",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Manicure",
+      "Pedicure",
+      "Nail styling"
+    ],
+    "priceRange": null,
+    "rating": 5.0,
+    "reviewsCount": 10,
+    "description": "Nail Salon in Warsaw offering manicure, pedicure services."
+  },
+  {
+    "name": "MyDay Salon Fryzjersko-Kosmetyczny",
+    "category": "Hair Salon",
+    "address": "Gen. Klemensa Stanisława Rudnickiego 10/lokal 7, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Haircut",
+      "Hair styling",
+      "Hair services",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.9,
+    "reviewsCount": 50,
+    "description": "Hair Salon in Warsaw offering haircut, hair styling services."
+  },
+  {
+    "name": "Ivy Beauty and Bubbles Warszawa",
+    "category": "Beauty Salon",
+    "address": "Emilii Plater 47, Warszawa",
+    "district": "Śródmieście",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.7,
+    "reviewsCount": 956,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Beauty Space JA",
+    "category": "Beauty Salon",
+    "address": "al. Jana Pawła II 43A/lokal 34A, Warszawa",
+    "district": "Wola",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology",
+      "Spa treatments"
+    ],
+    "priceRange": null,
+    "rating": 3.9,
+    "reviewsCount": 34,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Juvenise Salon Kosmetyczny Warszawa",
+    "category": "Beauty Salon",
+    "address": "Gen. Meriana C. Coopera 12F/5U, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.9,
+    "reviewsCount": 41,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Salon Urody Shine - Salon fryzjersko kosmetologiczny Bemowo",
+    "category": "Hair Salon",
+    "address": "Sternicza 96/U8, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Haircut",
+      "Hair styling",
+      "Hair services",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.6,
+    "reviewsCount": 64,
+    "description": "Hair Salon in Warsaw offering haircut, hair styling services."
+  },
+  {
+    "name": "Hair Studio Viktoriia Port",
+    "category": "Beauty Salon",
+    "address": "Szeligowska 2/lokal 3, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology",
+      "Hair services"
+    ],
+    "priceRange": null,
+    "rating": 5.0,
+    "reviewsCount": 30,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Salon Urody Przyjaciółka Przyjaciółki Bielany",
+    "category": "Beauty Salon",
+    "address": "Zbigniewa Romaszewskiego 6/lok b5, Warszawa",
+    "district": "Bielany",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.9,
+    "reviewsCount": 275,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "FOR YOUR BEAUTY WARSAW Laura Brzezińska",
+    "category": "Beauty Salon",
+    "address": "Kaliny Jędrusik 9/U13, Warszawa",
+    "district": "Żoliborz",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 5.0,
+    "reviewsCount": 24,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Derma Clinic Lazurowa",
+    "category": "Beauty Salon",
+    "address": "Lazurowa 183/lok.92, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.7,
+    "reviewsCount": 81,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Studio Urody Beata Szabłowska",
+    "category": "Barber",
+    "address": "Górczewska 228C/lokal U1, Warszawa",
+    "district": "Warsaw",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Men's haircut",
+      "Beard grooming"
+    ],
+    "priceRange": null,
+    "rating": 4.9,
+    "reviewsCount": 31,
+    "description": "Barber in Warsaw offering men's haircut, beard grooming services."
+  },
+  {
+    "name": "Akademia Piękna Salon Fryzjersko Kosmetyczny",
+    "category": "Hair Salon",
+    "address": "Josepha Conrada 15, Warszawa",
+    "district": "Bielany",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Haircut",
+      "Hair styling",
+      "Hair services",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.0,
+    "reviewsCount": 28,
+    "description": "Hair Salon in Warsaw offering haircut, hair styling services."
+  },
+  {
+    "name": "Angel Nails",
+    "category": "Nail Salon",
+    "address": "Powstańców Śląskich róg, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Manicure",
+      "Pedicure",
+      "Nail styling"
+    ],
+    "priceRange": null,
+    "rating": 4.6,
+    "reviewsCount": 299,
+    "description": "Nail Salon in Warsaw offering manicure, pedicure services."
+  },
+  {
+    "name": "MOYE Beauty Ewa Kuprewicz - manicure & pedicure Bemowo",
+    "category": "Nail Salon",
+    "address": "Łagowska 7/h1, Warszawa",
+    "district": "Bemowo",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Manicure",
+      "Pedicure"
+    ],
+    "priceRange": null,
+    "rating": 5.0,
+    "reviewsCount": 9,
+    "description": "Nail Salon in Warsaw offering manicure, pedicure services."
+  },
+  {
+    "name": "CHROMATIC | HAIR & NAILS & BEAUTY",
+    "category": "Hair Salon",
+    "address": "Sokratesa 2B/lokal U2, Warszawa",
+    "district": "Bielany",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Haircut",
+      "Hair styling",
+      "Nail styling",
+      "Hair services"
+    ],
+    "priceRange": null,
+    "rating": 4.9,
+    "reviewsCount": 114,
+    "description": "Hair Salon in Warsaw offering haircut, hair styling services."
+  },
+  {
+    "name": "Pracownia Fryzjerska Coobit Beauty",
+    "category": "Beauty Salon",
+    "address": "Arkuszowa 36, Warszawa",
+    "district": "Bielany",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology",
+      "Hair services"
+    ],
+    "priceRange": null,
+    "rating": 4.5,
+    "reviewsCount": 28,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "She beauty concept",
+    "category": "Beauty Salon",
+    "address": "Kłopot 4 A/m.153, Warszawa",
+    "district": "Żoliborz",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 5.0,
+    "reviewsCount": 16,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Alchemia Piękna",
+    "category": "Beauty Salon",
+    "address": "Dantego Alighieri 7, Warszawa",
+    "district": "Bielany",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.8,
+    "reviewsCount": 44,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "EGOISTkA beauty salon fryzjer, kosmetolog, manicure, brwi&rzęsy, masaż",
+    "category": "Beauty Salon",
+    "address": "Zbigniewa Romaszewskiego, ul.Romaszewskiego 6/lok. U5, Warszawa",
+    "district": "Bielany",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology",
+      "Manicure",
+      "Hair services",
+      "Brow styling",
+      "Lash styling"
+    ],
+    "priceRange": null,
+    "rating": 4.9,
+    "reviewsCount": 71,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "BeautyBox",
+    "category": "Beauty Salon",
+    "address": "Jana Olbrachta 126/Lokal usługowy u4, Warszawa",
+    "district": "Wola",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 5.0,
+    "reviewsCount": 4,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Salon Kosmetyczny Na Bóstwo",
+    "category": "Skin Care Clinic",
+    "address": "Wólczyńska 65/U4A, domofon 500C, Wólczyńska 65, Warszawa",
+    "district": "Bielany",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Skin care",
+      "Facial treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 5.0,
+    "reviewsCount": 6,
+    "description": "Skin Care Clinic in Warsaw offering skin care, facial treatments services."
+  },
+  {
+    "name": "Simply Nailbar & Beauty Endermologia Fala Uderzeniowa Oczyszczanie Wodorowe Lifting Rzęs Żoliborz",
+    "category": "Beauty Salon",
+    "address": "wejście od ul. Powązkowskiej, Kaliny Jędrusik 7/lok U4, Warszawa",
+    "district": "Żoliborz",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology",
+      "Nail styling",
+      "Lash styling",
+      "Endermology",
+      "Lifting treatments"
+    ],
+    "priceRange": null,
+    "rating": 4.7,
+    "reviewsCount": 40,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
+  },
+  {
+    "name": "Beauty Studio Katarzyna Tulik",
+    "category": "Beauty Salon",
+    "address": "Józefa Chłopickiego 31, Warszawa",
+    "district": "Praga",
+    "phone": null,
+    "website": null,
+    "services": [
+      "Beauty treatments",
+      "Cosmetology"
+    ],
+    "priceRange": null,
+    "rating": 4.9,
+    "reviewsCount": 29,
+    "description": "Beauty Salon in Warsaw offering beauty treatments, cosmetology services."
   }
 ]
