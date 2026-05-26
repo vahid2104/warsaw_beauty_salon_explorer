@@ -6,6 +6,14 @@ This project was built as a home task for the Warsaw Accelerator 2026 Software E
 
 ---
 
+## 🌐 Live Demo
+
+- Frontend: https://warsaw-beauty-salon-explorer-delta.vercel.app/
+- Backend API: https://warsawbeautysalonexplorer-production.up.railway.app
+- Salons API Endpoint: https://warsawbeautysalonexplorer-production.up.railway.app/api/salons
+
+---
+
 ## 📸 Screenshots
 
 > Add screenshots to the `frontend/public/screenshots` folder.
